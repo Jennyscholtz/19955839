@@ -1,0 +1,31 @@
+---
+title: "Question2: Billionaires"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(dplyr)
+list.files("/Users/jenny/Meesters/19955839/Question2/code", full.names = T, recursive = T) %>% as.list() %>% walk(~source(.))
+
+Forbes <- ~Dat_Col("/Users/jenny/Meesters/19955839/Question 2/data/Forbes")
+```
+
+## Interesting Facts from Forbes Billionaires' List
+
+
+First, we show in which industries countries have their maximum total net worth according to the Billionaires List. Unsurprisingly we see that China and US have the highest value of net worth of billionaires. 
+```{r echo=TRUE}
+~Forbes_plot1
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

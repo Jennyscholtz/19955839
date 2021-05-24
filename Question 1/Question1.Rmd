@@ -1,0 +1,61 @@
+---
+title: "Question1"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(dplyr)
+Movies <- read_csv("/Users/jenny/Meesters/19955839/Question 1/data/Movies/Movies.csv")
+
+list.files("/Users/jenny/Meesters/19955839/Question 1/code", full.names = T, recursive = T) %>% as.list() %>% walk(~source(.))
+
+```
+
+## Question 1: Profitable Movies
+
+My friend made some theories that I'm keen to test. This is the first claim she made:
+
+“I firmly remember that Rotten Tomatoes was always a great review platform - and if a movie had a rating of more than 80% on Rotten Tomatoes, audiences would rate it above 85% every time.”
+
+According to this nice tibble, her claim is completely false. There are 10 movies with a Rotten Tomatoes score of higher than 80% and an audience score of less than 85! That's almost 14%. Crazy. 
+```{r echo=FALSE}
+ ~Movies_adj(Movies)
+
+
+```
+The next claim I'm going to scrutinize is this one - 
+
+“Disney films may not have the highest grossing numbers, but they’ve always been the
+most profitable of all the leading studios.”
+
+I made this wonderfully colourful graph to see whether seh was right..
+
+```{r echo=FALSE}
+ ~Disney_Profit(Movies)
+
+
+```
+The plot shows the Average Profitability for every Leading Studio with the Average Grossing Number given on top of the bar. It's even arranged like a rainbow!- I know Art Majors love that type of thing. Anyway, here she can see that Disney clearly has the highest average grossing numbers and the highest average profit! (Take that DreamWorks.) She was actually not too far off in her claim, Disney is even better than she claimed. Wowzers.
+
+The last claim I would like to examine is this one:
+
+“Audiences are always drawn to the highest grossing films. In fact, I bet the correlation
+between the world wide grossing numbers and audience scores would be near 80%."
+
+For my arts friend I made this nice visual plot with colours and things so that she can see the correlation between some of the variables. This plot even looks like a ladder - how cool. 
+
+```{r echo=FALSE}
+~Correlation_plot
+
+```
+
+Hopefully the colours won't distract her, but I'll try and explain best I can. 
+
+The plot shows the correlation between variables. The darker the green, the higher the correlation. The darker the red, the lower the correlation. When we look at the intersection between the Worldwide Gross and the Audience Score, we can see that the correlation is relatively high - 0.4! However, it's definitely not 80%. 
+
+
+All in all, her claims weren't very accurate. Luckily, thanks to Google, Nico and Dawie even amateurs like myself can now scrutinize claims hers and prove them wrong! 
+
