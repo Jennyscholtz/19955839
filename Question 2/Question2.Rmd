@@ -1,6 +1,6 @@
 ---
 title: "Question2: Billionaires"
-output: pdf_document
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
